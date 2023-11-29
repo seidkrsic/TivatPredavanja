@@ -1,0 +1,54 @@
+ * { 
+     border: 1px solid black;
+     margin: 0;
+ }
+
+.white-blue__button { 
+    background-color: white;
+    height: 36px;
+    color: blue;
+    width: 105px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid blue;
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.red-button { 
+    background-color: darkred;
+    height: 36px;
+    color: white;
+    width: 105px;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 10px;
+    transition: all ease-in-out .3s;
+}
+
+.red-button:hover { 
+    background-color: blue;
+}
+
+.tweet-button { 
+    /* height: 36px; */
+    width: 105px;
+    border: none;
+    background-color: rgb(25, 163, 218);
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    border-radius: 25px;
+    padding: 1rem;
+    margin: 10px;
+    transition: background-color ease-in .5s;
+}
+
+.tweet-button:active { 
+    background-color: brown;
+}
