@@ -1,13 +1,16 @@
 // WEATHER APP
 
+let weatherForm;
+let cityInput;
+
+const apiKey = "f48fedfc3e0c0f38689c3ea306016ede"
 
 
 document.addEventListener("DOMContentLoaded", () => { 
 
-    const weatherForm = document.querySelector(".weatherForm");
-    const cityInput = document.querySelector(".cityInput");
+    weatherForm = document.querySelector(".weatherForm");
+    cityInput = document.querySelector(".cityInput");
 
-    const apiKey = "YOUR API KEY";
 
     weatherForm.addEventListener("submit", async event => {
 
@@ -51,7 +54,7 @@ async function getWeatherData(city){
 }
 
 function displayWeatherInfo(data){
-
+    let card = document.querySelector(".card");
     const {name: city, 
            main: {temp, humidity}, 
            weather: [{description, id}]} = data;
@@ -66,7 +69,7 @@ function displayWeatherInfo(data){
     const weatherEmoji = document.createElement("p");
 
     cityDisplay.textContent = city;
-    tempDisplay.textContent = `${((temp - 273.15) * (9/5) + 32).toFixed(1)}°F`;
+    tempDisplay.textContent = `${((temp - 273.15)).toFixed(1)}°C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`;
     descDisplay.textContent = description;
     weatherEmoji.textContent = getWeatherEmoji(id);
@@ -85,6 +88,9 @@ function displayWeatherInfo(data){
 }
 
 function getWeatherEmoji(weatherId){
+
+    // ovo je samo drugi nacin da postavite puno pitanja, umjesto if i else if... izguglajte switch javascript ako 
+    // vam nije jasno... lako je skroz.. 
 
     switch(true){
         case (weatherId >= 200 && weatherId < 300):
